@@ -1,0 +1,23 @@
+{
+  "name": "comfyui-liebs-toast",
+  "version": "1.0.0",
+  "description": "Activate the ComfyUI browser tab when requested by ComfyUI-Liebs-Toast node.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp dist",
+    "watch": "gulp watch"
+  },
+  "author": "Mark Lieberman",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-zip": "^5.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "sass": "^1.75.0"
+  }
+}
