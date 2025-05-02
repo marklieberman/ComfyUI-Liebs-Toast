@@ -12,17 +12,26 @@ A node to display a toast notification. Use it to send a toast when your prompt 
 
 * **[Browser add-on required]** "View Workflow" button in the toast will bring focus to the browser tab that sent the toast.
 
+| Screenshot | Description |
+| :---- | :---- |
+| <img src="./docs/images/workflow.png" width="300" height="228"/> | An example workflow with two toasts. The first toast is triggered when the image batch from the VAE Decode is available. It is used to get your attention for the image picker node. The second toast is triggered after the SD Ultimate Upscae is complete, and announces that the prompt is finished. |
+| <img src="./docs/images/toast.png" width="300" height="196"/> | A toast on Windows. The **View Workflow** button is displayed when the companion browser add-on is installed. |
+
 ## Browser Add-on
 
 The browser add-on allows the Python node to activate the browser tab when you click the **View Workflow** button in the toast. The button will not appear in the toast if the add-on is not installed.
 
-* Chrome addon: not available yet.
-* Edge addon: not available yet.
-* Firefox addon: not available yet.
+### Installation
+
+Install the add-on from your browser's add-on store.
+
+* Chrome: not available yet.
+* Edge: not available yet.
+* Firefox: not available yet.
 
 ### Permissions
 
-By default the add-on will only request permission to run on `http://localhost:8188/*`. You must request additional permissions in the add-on's options to run the addon on other domains or ports.
+By default the add-on will only request permission to run on `http://127.0.0.1:8188/*`. You must request additional permissions in the add-on's options to run the add-on on other domains or ports.
 
 ## Limitations
 

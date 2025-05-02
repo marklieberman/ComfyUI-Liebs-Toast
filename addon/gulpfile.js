@@ -47,7 +47,7 @@ function lintTask () {
 
 function distTask () {
   return gulp.src(sources.dist)
-    .pipe(zip('comfyui-liebs-toast.xpi', {
+    .pipe(zip('comfyui-liebs-toast.zip', {
       compress: false
     }))
     .pipe(gulp.dest('dist'));
