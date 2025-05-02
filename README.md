@@ -8,11 +8,13 @@ A node to display a toast notification. Use it to send a toast when your prompt 
 
 * Customize the toast message, duration, and/or silence the notification audio.
 
+* Setting to skip the toast if the browser tab is already visible.
+
 * **[Browser add-on required]** "View Workflow" button in the toast will bring focus to the browser tab that sent the toast.
 
 ## Browser Add-on
 
-The browser add-on provides additional functionality that is not otherwise available. Specifically, it allows the Python node to activate the browser tab when you click the "View Workflow" button in the toast.
+The browser add-on allows the Python node to activate the browser tab when you click the **View Workflow** button in the toast. The button will not appear in the toast if the add-on is not installed.
 
 * Chrome addon: not available yet.
 * Edge addon: not available yet.

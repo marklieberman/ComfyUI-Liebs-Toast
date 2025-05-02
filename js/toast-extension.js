@@ -27,7 +27,35 @@ const NODE_TYPE = 'LiebsToast';
 // Register the ComfyUI extension.
 app.registerExtension({
 	name: "LiebsToast",
+    settings: [{
+        category: ['Liebs Toast', 'Toasts', 'Toast When Page Is Visible' ],
+        id: 'LiebsToast.SendToastPageVisible',
+        name: 'Send a toast even if the page is visible',
+        type: 'boolean',
+        defaultValue: false,
+        tooltip: 'Uses the Page Visibility API to determine if the page is visible or hidden',
+    }],
     setup() {
+        // Add a listener for getting page visibility.
+        api.addEventListener('liebs-toast-visible', async (event) => { 
+            const detail = event.detail,
+                extensionSettings = app.extensionManager.setting;
+
+            const body = new FormData();
+            body.append('toast_tab_id', detail.toast_tab_id);
+            if (extensionSettings.get('LiebsToast.SendToastPageVisible')) {
+                // Pretend that the page is always hidden so it always toasts.
+                body.append('page_visibility', 'hidden');
+            } else {
+                body.append('page_visibility', document.visibilityState);
+            }
+
+            api.fetchApi('/liebs-toast-message', { 
+                method: 'POST', 
+                body 
+            });
+        });
+
         // Add a listener for toast callback.
         api.addEventListener("liebs-toast-click", async (event) => { 
             const detail = event.detail;
