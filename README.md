@@ -14,8 +14,8 @@ A node to display a toast notification. Use it to send a toast when your prompt 
 
 | Screenshot | Description |
 | :---- | :---- |
-| <img src="./docs/images/workflow.png" width="300" height="228"/> | An example workflow with two toasts. The first toast is triggered when the image batch from the VAE Decode is available. It is used to get your attention for the image picker node. The second toast is triggered after the SD Ultimate Upscae is complete, and announces that the prompt is finished. |
-| <img src="./docs/images/toast.png" width="300" height="196"/> | A toast on Windows. The **View Workflow** button is displayed when the companion browser add-on is installed. |
+| <img src="./docs/images/workflow.png" width="500"/> | An example workflow with two toasts. The first toast is triggered when the image batch from the VAE Decode is available. It is used to get your attention for the image picker node. The second toast is triggered after the SD Ultimate Upscae is complete, and announces that the prompt is finished. |
+| <img src="./docs/images/toast.png" width="500"/> | A toast on Windows. The **View Workflow** button is displayed when the companion browser add-on is installed. |
 
 ## Browser Add-on
 
