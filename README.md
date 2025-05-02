@@ -1,6 +1,6 @@
 # ComfyUI-Liebs-Toast
 
-A node to display a toast notification. Use it to send a toast when your prompt is complete. Also pairs well with [ComfyUI-Liebs_Picker](https://github.com/marklieberman/ComfyUI-Liebs-Picker) and [cg-image-filter](https://github.com/chrisgoringe/cg-image-filter) to be notified when the picker is waiting.
+A node to display a toast notification. Use it to send a toast when your prompt is complete. Also pairs well with [ComfyUI-Liebs-Picker](https://github.com/marklieberman/ComfyUI-Liebs-Picker) and [cg-image-filter](https://github.com/chrisgoringe/cg-image-filter) to be notified when the picker is waiting.
 
 ## Features
 
