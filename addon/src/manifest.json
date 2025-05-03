@@ -13,8 +13,8 @@
   ],
 
   "host_permissions": [
-    "http://localhost:8188/*",
-    "http://127.0.0.1:8188/*"
+    "http://localhost/*",
+    "http://127.0.0.1/*"
   ],
 
   "optional_host_permissions": [

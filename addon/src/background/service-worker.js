@@ -1,22 +1,34 @@
 // Load the list of ComfyUI domains from settings.
 chrome.storage.local.get({
-    comfyDomains: [
-        'http://localhost:8188/*',
-        'http://127.0.0.1:8188/*'
-    ]
-}).then(config => {
-    // Register the content scripts that forwards messages from the ComfyUI extension.
-    const scripts = [{
-        id: 'activator',
-        js: [ 'content/activator.js' ],
-        matches: config.comfyDomains,
-        runAt: 'document_start',
-        persistAcrossSessions: true
-    }];
-    console.log(scripts);   
-    chrome.scripting.registerContentScripts(scripts)
-        .then(() => console.log('registered content scripts', scripts))
-        .catch(ex => console.error('failed to register content script', ex));
+    comfyDomains: []
+}).then(async config => {
+    // Reset the ComfyUI domains if it somehow became empty.
+    let comfyDomains = config.comfyDomains;
+    if (comfyDomains?.length === 0) {
+        console.log('Resetting comfy domains');
+        comfyDomains = [
+            'http://localhost/*',
+            'http://127.0.0.1/*'
+        ];
+        await chrome.storage.local.set({
+            comfyDomains
+        });
+    }    
+
+    try {
+        // Register the content script.
+        const scripts = [{
+            id: 'activator',
+            js: [ '/content/activator.js' ],
+            matches: comfyDomains,
+            runAt: 'document_start',
+            persistAcrossSessions: true
+        }];
+        await chrome.scripting.registerContentScripts(scripts);
+        console.log('registered content scripts', scripts);
+    } catch (ex) {
+        console.error('failed to register content script', ex);
+    }
 });
 
 // Listen for messages from the ComfyUI extension.

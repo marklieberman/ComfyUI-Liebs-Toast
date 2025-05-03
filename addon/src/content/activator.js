@@ -1,3 +1,4 @@
+console.log('ComfyUI-Liebs-Toast activator loaded');
 window.addEventListener('message', (event) => {
     const topic = event.data?.topic;
     switch (topic) {

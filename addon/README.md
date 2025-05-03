@@ -12,7 +12,7 @@ Install the add-on from your browser's add-on store.
 
 ### Permissions
 
-By default the add-on will only request permission to run on `http://127.0.0.1:8188/*`. You must request additional permissions in the add-on's options to run the add-on on other domains or ports.
+By default the add-on will only request permission to run on `http://127.0.0.1/*` and `http://localhost/*`. You must request additional permissions in the add-on's options to run the add-on on other domains.
 
 ## Building
 
