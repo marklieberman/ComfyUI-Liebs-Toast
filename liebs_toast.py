@@ -38,7 +38,8 @@ class LiebsToast:
                 "title": ("STRING", {"default": "ComfyUI Workflow"}),
                 "body": ("STRING", {"multiline": True, "default": "Attention requested"}),
                 "duration": (["long", "short"], {}),
-                "silent": ("BOOLEAN", {"default": True}),                
+                "silent": ("BOOLEAN", {"default": True}),
+                "center_on_node": ("STRING", {"default": "none"}),
             },
             "hidden": {
                 "toast_tab_id": ("STRING",),
@@ -55,18 +56,25 @@ class LiebsToast:
     CATEGORY = "notify"
     OUTPUT_NODE = True
 
-    def func(self, image_trigger, title, body, silent, duration, toast_tab_id, addon_present, unique_id):        
+    def func(self, image_trigger, title, body, duration, silent, center_on_node, toast_tab_id, addon_present, unique_id):        
         # Grab the parameters from the input lists.
         title = title[0]
         body = body[0]
-        silent = silent[0]
         duration = duration[0]
+        silent = silent[0]
+        center_on_node = center_on_node[0]
         toast_tab_id = toast_tab_id[0]
         addon_present = addon_present[0]
 
         # Forward the toast activation to the frontend.
         def on_activated(result):
-            PromptServer.instance.send_sync("liebs-toast-click", { "toast_tab_id": toast_tab_id, "action": result["button"] })
+            message = ({ 
+                "toast_tab_id": toast_tab_id, 
+                "unique_id": unique_id, 
+                "center_on_node": center_on_node,
+                "action": result["button"] 
+            })
+            PromptServer.instance.send_sync("liebs-toast-click", message)
         
         # Prepare a slot to receive a message.
         mailbox[toast_tab_id] = None

@@ -65,6 +65,35 @@ app.registerExtension({
                 return;
             }
 
+            let [ findTitle, zoom ] = detail.center_on_node?.split('|') ?? [],
+                targetNode = null;
+            switch (findTitle?.toLowerCase()) {
+                case 'none':
+                case 'off':
+                    // Don't center on any node.
+                    targetNode = null;
+                    break;
+                case 'self':
+                    // Center on self.
+                    targetNode = app.graph.getNodeById(detail.unique_id);
+                    break
+                default:
+                    if (findTitle) {
+                        // Find a node by title to center on.
+                        targetNode = app.graph.findNodeByTitle(findTitle);
+                        if (!targetNode) {
+                            alert(`Toast node could not find a node with title "${findTitle}"`);
+                        }
+                    }
+            }
+            if (targetNode) {
+                app.canvas.centerOnNode(targetNode);
+                zoom = parseFloat(zoom);
+                if (Number.isFinite(zoom)) {
+                    app.canvas.setZoom(zoom);
+                }
+            }
+
             // Relay the message to the browser extension.
             window.postMessage({
                 topic: 'liebs-toast-click',
