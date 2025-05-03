@@ -47,12 +47,23 @@ class LiebsToast:
             }
         }
 
+    # Take a list input to avoid popping multiple toasts for lists.
+    INPUT_IS_LIST = True
+
     RETURN_TYPES = ()
     FUNCTION = "func"
     CATEGORY = "notify"
     OUTPUT_NODE = True
 
-    def func(self, image_trigger, title, body, silent, duration, toast_tab_id, addon_present, unique_id):
+    def func(self, image_trigger, title, body, silent, duration, toast_tab_id, addon_present, unique_id):        
+        # Grab the parameters from the input lists.
+        title = title[0]
+        body = body[0]
+        silent = silent[0]
+        duration = duration[0]
+        toast_tab_id = toast_tab_id[0]
+        addon_present = addon_present[0]
+
         # Forward the toast activation to the frontend.
         def on_activated(result):
             PromptServer.instance.send_sync("liebs-toast-click", { "toast_tab_id": toast_tab_id, "action": result["button"] })
