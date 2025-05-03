@@ -6,6 +6,13 @@
 
   "description": "Activate the ComfyUI browser tab when requested by ComfyUI-Liebs-Toast node.",
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "comfyui-liebs-toast@liebs.ca",
+      "strict_min_version": "128.0"
+    }
+  },
+
   "permissions": [
     "tabs",
     "scripting",
