@@ -10,6 +10,6 @@ Repository = "https://github.com/marklieberman/ComfyUI-Liebs-Toast"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "markliebs"
 DisplayName = "ComfyUI-Liebs-Toast"
-Icon = ""
+Icon = "https://raw.githubusercontent.com/marklieberman/ComfyUI-Liebs-Toast/refs/heads/main/comfy-icon.png"
