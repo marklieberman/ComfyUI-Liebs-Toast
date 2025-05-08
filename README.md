@@ -43,7 +43,7 @@ Install the add-on from your browser's add-on store.
 
 * Chrome: not available yet.
 * Edge: not available yet.
-* Firefox: not available yet.
+* Firefox: [https://addons.mozilla.org/en-US/firefox/addon/comfyui-liebs-toast/](https://addons.mozilla.org/en-US/firefox/addon/comfyui-liebs-toast/)
 
 ### Permissions
 
