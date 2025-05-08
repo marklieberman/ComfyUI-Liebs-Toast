@@ -1,0 +1,15 @@
+[project]
+name = "liebs-toast"
+description = "A node to display a toast notification. Use it to send a toast when your prompt is complete. Also pairs well with [a/ComfyUI-Liebs_Picker](https://github.com/marklieberman/ComfyUI-Liebs-Picker) and [a/cg-image-filter](https://github.com/chrisgoringe/cg-image-filter) to be notified when the picker is waiting."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["windows-toasts; os_name == 'nt'"]
+
+[project.urls]
+Repository = "https://github.com/marklieberman/ComfyUI-Liebs-Toast"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "markliebs"
+DisplayName = "ComfyUI-Liebs-Toast"
+Icon = "https://raw.githubusercontent.com/marklieberman/ComfyUI-Liebs-Toast/refs/heads/main/comfy-icon.png"
