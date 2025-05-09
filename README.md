@@ -5,16 +5,13 @@ A node to display a toast notification. Use it to send a toast when your prompt 
 ## Features
 
 * Display a toast notification.
-
 * Customize the toast message, duration, and/or silence the notification audio.
-
 * Setting to skip the toast if the browser tab is already visible.
 
 > [!IMPORTANT]
 > The companion browser add-on is required to support the following functionality:
 
 * **View Workflow** button in the toast will bring focus to the browser tab that sent the toast.
-
 * Center the view on self or another node when the **View Workflow** button is clicked.
 
 ### Screenshots
