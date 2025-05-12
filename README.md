@@ -39,7 +39,7 @@ The browser add-on allows the Python node to activate the browser tab when you c
 Install the add-on from your browser's add-on store.
 
 * Chrome: not available yet.
-* Edge: not available yet.
+* Edge: [https://microsoftedge.microsoft.com/addons/detail/comfyuiliebstoast/ighbjmihnndalcclfflgogbjemkkflbe](https://microsoftedge.microsoft.com/addons/detail/comfyuiliebstoast/ighbjmihnndalcclfflgogbjemkkflbe)
 * Firefox: [https://addons.mozilla.org/en-US/firefox/addon/comfyui-liebs-toast/](https://addons.mozilla.org/en-US/firefox/addon/comfyui-liebs-toast/)
 
 ### Permissions
